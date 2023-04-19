@@ -2,6 +2,7 @@ import express, { request, response } from 'express';
 import bodyParser from 'body-parser';
 import { ListaCidades } from './controllers/ListaCidades.js';
 import { CadastrarCidade } from './controllers/CadastrarCidade.js';
+import { DeleteCidade } from './controllers/DeleteCidade.js';
 
 const app = express();
 app.use(express.json());
@@ -30,3 +31,5 @@ app.get('/api/ping', (request, response) => {
 app.get('/api/cidades', ListaCidades);
 
 app.post('/api/cidades', CadastrarCidade);
+
+app.delete('/api/cidades/:id', DeleteCidade);
