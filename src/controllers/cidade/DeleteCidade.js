@@ -1,5 +1,5 @@
 import { open } from 'sqlite';
-import { OpenDatabase } from '../database.js';
+import { OpenDatabase } from '../../database.js';
 import { request, response } from 'express';
 
 export const DeleteCidade = async (request, response) => {

@@ -1,4 +1,4 @@
-import { OpenDatabase } from '../database.js';
+import { OpenDatabase } from '../../database.js';
 import { request, response } from 'express';
 
 export const CadastrarCidade = async (request, response) => {

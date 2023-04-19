@@ -1,4 +1,4 @@
-import { OpenDatabase } from '../database.js';
+import { OpenDatabase } from '../../database.js';
 
 export const ListaCidades = async (request, response) => {
   const db = await OpenDatabase();

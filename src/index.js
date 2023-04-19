@@ -1,8 +1,8 @@
 import express, { request, response } from 'express';
 import bodyParser from 'body-parser';
-import { ListaCidades } from './controllers/ListaCidades.js';
-import { CadastrarCidade } from './controllers/CadastrarCidade.js';
-import { DeleteCidade } from './controllers/DeleteCidade.js';
+import { ListaCidades } from './controllers/cidade/ListaCidades.js';
+import { CadastrarCidade } from './controllers/cidade/CadastrarCidade.js';
+import { DeleteCidade } from './controllers/cidade/DeleteCidade.js';
 
 const app = express();
 app.use(express.json());
