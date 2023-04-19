@@ -6,6 +6,9 @@ import { DeleteCidade } from './controllers/cidade/DeleteCidade.js';
 import { ListaBairros } from './controllers/bairros/ListaBairros.js';
 import { CadastrarBairro } from './controllers/bairros/CadastrarBairro.js';
 import { DeleteBairro } from './controllers/bairros/DeleteBairro.js';
+import { ListaCasasController } from './controllers/casas/ListaCasasController.js';
+import { CadastrarCasasController } from './controllers/casas/CadastrarCasasController.js';
+import { DeleteCasasController } from './controllers/casas/DeleteCasasController.js';
 
 const app = express();
 app.use(express.json());
@@ -31,7 +34,7 @@ app.get('/api/ping', (request, response) => {
   });
 });
 
-//Endpoint Cidades
+//Endpoints Cidades
 
 app.get('/api/cidades', ListaCidades);
 
@@ -39,10 +42,18 @@ app.post('/api/cidades', CadastrarCidade);
 
 app.delete('/api/cidades/:id', DeleteCidade);
 
-//Endpoint Bairros
+//Endpoints Bairros
 
 app.get('/api/bairros', ListaBairros);
 
 app.post('/api/bairros', CadastrarBairro);
 
 app.delete('/api/bairros/:id', DeleteBairro);
+
+//Endpoints Casas
+
+app.get('/api/casas', ListaCasasController);
+
+app.post('/api/casas', CadastrarCasasController);
+
+app.delete('/api/casas/:id', DeleteCasasController);
