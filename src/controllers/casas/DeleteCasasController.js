@@ -3,7 +3,7 @@ import { OpenDatabase } from '../../database.js';
 export const DeleteCasasController = async (request, response) => {
   const { id } = request.params;
   const db = await OpenDatabase();
-  const sql = `DELETE FROM casa WHERE id = ?`;
+  const sql = `DELETE FROM casas WHERE id = ?`;
   const params = [id];
   try {
     await db.run(sql, params);

@@ -1,14 +1,17 @@
 import express, { request, response } from 'express';
 
-import { ListaCidades } from './controllers/cidade/ListaCidades.js';
-import { CadastrarCidade } from './controllers/cidade/CadastrarCidade.js';
-import { DeleteCidade } from './controllers/cidade/DeleteCidade.js';
-import { ListaBairros } from './controllers/bairros/ListaBairros.js';
-import { CadastrarBairro } from './controllers/bairros/CadastrarBairro.js';
-import { DeleteBairro } from './controllers/bairros/DeleteBairro.js';
+import { ListaCidades } from './controllers/cidade/ListaCidadesController.js';
+import { CadastrarCidade } from './controllers/cidade/CadastrarCidadeController.js';
+import { DeleteCidade } from './controllers/cidade/DeleteCidadeController.js';
+import { ListaBairros } from './controllers/bairros/ListaBairrosController.js';
+import { CadastrarBairro } from './controllers/bairros/CadastrarBairroController.js';
+import { DeleteBairro } from './controllers/bairros/DeleteBairroController.js';
 import { ListaCasasController } from './controllers/casas/ListaCasasController.js';
 import { CadastrarCasasController } from './controllers/casas/CadastrarCasasController.js';
 import { DeleteCasasController } from './controllers/casas/DeleteCasasController.js';
+import { ListaRuasController } from './controllers/ruas/ListaRuasController.js';
+import { CadastrarRuasController } from './controllers/ruas/CadastrarRuasController.js';
+import { DeleteRuasController } from './controllers/ruas/DeleteRuasController.js';
 
 const app = express();
 app.use(express.json());
@@ -57,3 +60,11 @@ app.get('/api/casas', ListaCasasController);
 app.post('/api/casas', CadastrarCasasController);
 
 app.delete('/api/casas/:id', DeleteCasasController);
+
+//Endpoints Ruas
+
+app.get('/api/ruas', ListaRuasController);
+
+app.post('/api/ruas', CadastrarRuasController);
+
+app.delete('/api/ruas/:id', DeleteRuasController);

@@ -2,10 +2,17 @@ import { OpenDatabase } from '../../database.js';
 
 export const CadastrarCasasController = async (request, response) => {
   //os dados vem do body da aplicação
-  const { quartos, comodos, area_construcao, garagem, bairro_id, rua_id } =
-    request.body;
+  const {
+    quartos,
+    comodos,
+    area_construcao,
+    garagem,
+    bairro_id,
+    rua_id,
+    valor,
+  } = request.body;
   const db = await OpenDatabase();
-  const sql = `INSERT INTO casa (quartos, comodos, area_construcao, garagem, bairro_id, rua_id ) VALUES (?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO casas (quartos, comodos, area_construcao, garagem, bairro_id, rua_id, valor) VALUES (?, ?, ?, ?, ?, ?, ?)`;
   const params = [
     quartos,
     comodos,
@@ -13,6 +20,7 @@ export const CadastrarCasasController = async (request, response) => {
     garagem,
     bairro_id,
     rua_id,
+    valor,
   ];
   try {
     await db.run(sql, params);
