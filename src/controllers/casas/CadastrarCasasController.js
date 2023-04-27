@@ -7,20 +7,24 @@ export const CadastrarCasasController = async (request, response) => {
     comodos,
     area_construcao,
     garagem,
+    cidade_id,
     bairro_id,
     rua_id,
     valor,
+    tipo_anuncio,
   } = request.body;
   const db = await OpenDatabase();
-  const sql = `INSERT INTO casas (quartos, comodos, area_construcao, garagem, bairro_id, rua_id, valor) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO casas (quartos, comodos, area_construcao, garagem, cidade_id,bairro_id, rua_id, valor, tipo_anuncio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
   const params = [
     quartos,
     comodos,
     area_construcao,
     garagem,
+    cidade_id,
     bairro_id,
     rua_id,
     valor,
+    tipo_anuncio,
   ];
   try {
     await db.run(sql, params);

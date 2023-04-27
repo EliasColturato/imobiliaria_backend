@@ -1,10 +1,6 @@
-import { OpenDatabase } from '../../database.js';
+import { ListaCasasService } from '../../services/ListaCasasService.js';
 
 export const ListaCasasController = async (request, response) => {
-  const db = await OpenDatabase();
-  const casas = await db.all(`
-    SELECT * FROM casas
-  `);
-  db.close();
+  const casas = await ListaCasasService();
   return response.send(casas);
 };

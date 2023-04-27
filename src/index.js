@@ -12,6 +12,7 @@ import { DeleteCasasController } from './controllers/casas/DeleteCasasController
 import { ListaRuasController } from './controllers/ruas/ListaRuasController.js';
 import { CadastrarRuasController } from './controllers/ruas/CadastrarRuasController.js';
 import { DeleteRuasController } from './controllers/ruas/DeleteRuasController.js';
+import { ListaAnunciosController } from './controllers/tipo_anuncios/ListaAnunciosController.js';
 
 const app = express();
 app.use(express.json());
@@ -68,3 +69,7 @@ app.get('/api/ruas', ListaRuasController);
 app.post('/api/ruas', CadastrarRuasController);
 
 app.delete('/api/ruas/:id', DeleteRuasController);
+
+//Endpoints Anuncios
+
+app.get('/api/anuncios', ListaAnunciosController);
